@@ -3,11 +3,10 @@
 /**
  * main - Entry point
  *
- * Description: print the alphabet in lowercase, followed by a new line.
+ * Description:print the alphabet in lowercase except q and e
  *
  * Return: Always 0 (Success)
 */
-
 
 int main(void)
 {
@@ -15,6 +14,8 @@ int main(void)
 
 	while (ch <= 'z')
 	{
+		if (ch == 'e' || ch == 'q')
+			ch++;
 		putchar(ch);
 		ch++;
 	}

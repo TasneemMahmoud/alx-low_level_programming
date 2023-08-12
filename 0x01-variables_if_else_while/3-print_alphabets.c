@@ -3,21 +3,29 @@
 /**
  * main - Entry point
  *
- * Description: print the alphabet in lowercase, followed by a new line.
+ * Description: A C program that prints with put function
  *
  * Return: Always 0 (Success)
 */
 
-
 int main(void)
 {
 	char ch = 'a';
+	char CH = 'A';
 
 	while (ch <= 'z')
 	{
 		putchar(ch);
 		ch++;
 	}
+
+	while (CH <= 'Z')
+	{
+		putchar('ch');
+		CH++;
+	}
 	putchar('\n');
+
 	return (0);
 }
+
