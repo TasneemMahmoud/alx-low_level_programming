@@ -1,62 +1,30 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * islower - spacific if char is lower
+ * cap_string - function that capitalizes all words of a string
  *
- * @ch: character
+ * @s: string
  *
- * Return: 1 if true, 0 if false
- */
-
-int islower(char ch)
-{
-	return (ch >= 97 && ch <= 122);
-}
-
-/**
- * isdelimiter - Separators of words
- *
- *@ch: character
- *
- * Return: 1 if true, 0 if false
- */
-
-int isdelimiter(char ch)
-{
-	int i;
-	char delimiter[] = " \t\n,.!?\'(){}";
-
-	for (i = 0; i < 12; i++)
-		if (ch == delimiter[i])
-			return (1);
-}
-
-/**
- * cap_string -  function that capitalizes all words of a string.
- *
- * @s: Acapitalized string
- *
- * Return: Achanged string in pointer
+ * Return: string with capitalized chars
  */
 
 char *cap_string(char *s)
 {
-	char *ptr = s;
-	int founddelimiter = 1;
+	int i = 0;
 
-	while (*s)
+	while (s[i])
 	{
-		if (isdelimiter(*s))
-			founddelimiter = 1;
-		else if (islower(*s) && founddelimiter)
-		{
-			*s -= 32;
-			founddelimiter = 0;
-		}
-		else
-			founddelimiter = 0;
-		s++;
+		while (!(s[i] >= 'a' && s[i] <= 'z'))
+			i++;
+
+		if (s[i - 1] == ' ' || (s[i - 1] == '\t' || (s[i - 1] == '\n' ||
+			(s[i - 1] == ',' || (s[i - 1] == ';' || (s[i - 1] == '.' ||
+			(s[i - 1] == '!' || (s[i - 1] == '?' ||
+			(s[i - 1] == '"' || (s[i - 1] == '(' || (s[i - 1] == ')' ||
+			(s[i - 1] == '{' || (s[i - 1] == '}' || i == 0)
+					s[i] -= 32;
+		i++;
 	}
-	return (ptr);
+	return (s);
 }
+
