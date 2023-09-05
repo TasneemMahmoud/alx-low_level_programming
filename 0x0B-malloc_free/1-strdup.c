@@ -13,27 +13,23 @@
 
 char *_strdup(char *str)
 {
-	int x = 0, y = 0;
+	int x, y = 0;
 	char *s;
 
 	if (str == NULL)
 		return (NULL);
 
-	while (str[y] != '\0')
-		y++;
+	x = 0;
+	while (str[x] != '\0')
+		x++;
 
-	s = malloc(y * sizeof(*str) + 1);
+	s = malloc(sizeof(*str) * (x + 1);
 
-	if (s == 0)
+	if (s == NULL)
 		return (NULL);
 
-	else
-	{
-		while (x < y)
-		{
-			y++;
-			s[x] = str[x];
-		}
-	}
+	for (y = 0; str[y]; y++)
+		s[y] = str[y];
+
 	return (s);
 }
