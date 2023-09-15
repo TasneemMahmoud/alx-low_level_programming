@@ -16,10 +16,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	c = 0;
 	while (c < n)
 	{
-		c++;
 		printf("%d", va_arg(a, int));
 		if (c != (n - 1) && separator != NULL)
 			printf("%s", separator);
+		c++;
 	}
 	printf("\n");
 	va_end(a);
